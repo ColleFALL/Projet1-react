@@ -1,137 +1,123 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-
-
-
-
- */
-
-
- /* Container principal */
-.pays-container {
-  display: flex;
-  flex-direction: row;
+/* === Grille des continents === */
+.continents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 70px;
   justify-content: center;
-  margin-left: 100px;
-  /* flex-direction: column; */
   align-items: center;
-  padding: 20px;
-  width: 80%;
-  height: auto;
-  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-/* Grille des continents */
-.continents-grid,
+/* === Grille des pays === */
 .countries-grid {
-  display: flex;
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); */
-  gap: 20px;
-  justify-items: center; /* Centre les cards horizontalement */
-  width: 100%;
-  max-width: 1200px; /* Limite la largeur pour ne pas trop étirer sur grands écrans */
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 50px;
+  justify-content: center;
+  margin: 0 auto;
 }
 
-/* Style des cards */
+/* === Cartes === */
 .card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
   text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  width: 220px;
 }
 
-.card img {
+/* === Cartes continent === */
+.continent-card {
+  padding: 8px;
+}
+
+/* === Images === */
+.img-country {
   width: 100%;
-  height: 140px;
+  height: 120px;
   object-fit: cover;
-}
-
-.card h2,
-.card h3 {
-  margin: 10px 0;
-  font-size: 1.1rem;
-}
-
-.card p {
-  margin: 5px 10px;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Bouton retour */
-.back-button {
-  margin-bottom: 20px;
-  padding: 8px 16px;
-  border: none;
-  background-color: #007bff;
-  color: white;
   border-radius: 8px;
+}
+
+.img-continent {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* === Titres === */
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.continent-title {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+/* === Textes === */
+.text {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+/* === Boutons === */
+.button {
+  padding: 8px 14px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: background-color 0.2s;
+  margin-bottom: 20px;
 }
 
-.back-button:hover {
-  background-color: #0056b3;
+/* === Barre de recherche et select === */
+.search-bar {
+  padding: 8px;
+  margin: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
 }
 
-/* Responsive pour mobile */
+/* === Responsivité === */
+@media (max-width: 992px) {
+  .continents-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .countries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
 @media (max-width: 600px) {
-  .card {
-    width: 90%;
+  .continents-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
   }
-  .card img {
-    height: 120px;
+  .countries-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
   }
+  .search-bar, select {
+    width: 100%;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
+
+/* === Bouton supplémentaire === */
+.bouttonStyle {
+  margin-left: 50px;
 }
